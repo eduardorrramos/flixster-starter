@@ -1,0 +1,10 @@
+
+.moviecard {
+    border-width: 3px;
+    display: inline-block;
+    border-color: black;
+    border: thin solid black;
+    margin: 10px;
+    width:15vw;
+    height:19vw;
+} /*not working what why is there no border */

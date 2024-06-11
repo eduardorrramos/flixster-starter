@@ -1,0 +1,20 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #e7e7e7;
+
+  }
+li {
+    display:inline;
+    width: 80px;
+    border-color: black;
+    border-radius: 3px;
+}
+a {
+    width: 70px;
+    align-items: center;
+    display: inline-block;
+    padding: 8px;
+    background-color: #dddddd;
+  }
