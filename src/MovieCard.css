@@ -8,3 +8,7 @@
     width:15vw;
     height:19vw;
 } /*not working what why is there no border */
+.movieimage {
+    height:100px ;
+    width:100px ;
+}

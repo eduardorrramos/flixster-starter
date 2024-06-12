@@ -7,40 +7,24 @@ import MovieCard from './MovieCard'
 // api_key = 'ab418bdf6d93c36a6816d0ab81c2ec63'
 
 function MovieList ({data}) {
-    
-    // console.log(data); /*just twenty movies n data */
-
-    // console.log(data.results);
     let moviearray = (data.results);
     // console.log(moviearray);
-    console.log(moviearray[0].title);
-    moviearray.map((movie) => {
-        console.log(movie.title);
-        return
-    });
-    
+    let url = "http://image.tmdb.org/t/p/w500";
+            return (
 
-  
-    return (
-        
-        <>
-        
-        <MovieCard
-        movieTitle="${movie.title}"
-        imgSrc="./public/movie.png"
-        movieRating="3"
-        />
-        
-       
-        </>
-
-    );
+moviearray.map((movie) => (
+            <> {
+            <MovieCard
+            key={movie.id}
+            movieTitle={movie.title}
+            imgSrc={url + movie.poster_path}
+            movieRating={movie.vote_average}
+            />
+            }
+            </> 
+ )) );
     
 }
-
-
-
-
 
 MovieList.propTypes = {
 
