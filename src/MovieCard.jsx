@@ -3,7 +3,7 @@ import './MovieCard.css'
 function MovieCard (props) {
     return (
         <div className="moviecard">
-        <p>{props.id}</p>
+        {/* <p>{props.id}</p> */}
         <h1>{props.movieTitle} </h1>
         <img className="movieimage" src={props.imgSrc} />
         <p>{props.movieRating}</p>
@@ -11,7 +11,7 @@ function MovieCard (props) {
     )
 }
 MovieCard.propTypes = {
-    key:propTypes.number.isRequired,
+    // key:propTypes.number.isRequired,
     movieTitle: propTypes.string.isRequired,
     imgSrc: propTypes.string.isRequired,
     movieRating: propTypes.number.isRequired,
