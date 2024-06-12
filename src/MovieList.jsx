@@ -2,17 +2,22 @@ import './MovieList.css';
 import React from 'react';
 import propTypes from 'prop-types';
 import MovieCard from './MovieCard'
+import { useState, useEffect } from 'react'
+
 
 // import requests
 // api_key = 'ab418bdf6d93c36a6816d0ab81c2ec63'
 
-function MovieList ({data}) {
-    const [movieData, setMovieData] = useState(null)
-    const [page, setPageNumber] = useState(1)
-
-    const fetchData = async () => {
+function MovieList () {
+    const [movieData, setMovieData] = useState([])
+    const [page, setPage] = useState(1)
+    
+    useEffect(() => {
+        fetchData(page);
+    }, [page]);
+    const fetchData = async (page) => {
     const apiToken = import.meta.env.VITE_API_TOKEN
-    const response = await fetch(`https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1`,
+    const response = await fetch(`https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=${page}`,
       {
         method: 'GET',
         headers: {
@@ -20,50 +25,37 @@ function MovieList ({data}) {
         }
       })
     const readabledata = await response.json()
-    console.log(readabledata);
-    setMovieData(readabledata);
-  };
-// oneffect( , [page]);
+    const arrayof = readabledata.results;
+    console.log(arrayof)
 
-async function increment() {
-    setPageNumber(page+1);
-    console.log(page)
+    setMovieData([...movieData,...arrayof]);
+  };
+
+function increment() {
+    setPage(page + 1);
+    console.log({page})
 };
 
-  useEffect(() => {
-    
-      fetchData();
-    
-  }, []);
+//   const handleMovieChange = (newMovie) => {
+//     setMovie(newMovie);
+//   };
 
-  const handleMovieChange = (newMovie) => {
-    setMovie(newMovie);
-  };
   if (!movieData) {
     return <div>Loading</div>
   }
-
-
-
-
-
-    let moviearray = (data.results);
-    // console.log(moviearray);
     let url = "http://image.tmdb.org/t/p/w500";
-            return (
-
-moviearray.map((movie) => (
-            <> {
+    return (
+        <>
+        {movieData.map((movie, i) => (
             <MovieCard
             // key={movie.id}
+            key={i}
             movieTitle={movie.title}
             imgSrc={url + movie.poster_path}
             movieRating={movie.vote_average}
-            />
-            }
-            </> 
- )) );
-    
+            />               
+    ))} <button onClick={increment}> Load More</button> </>    
+    );
 }
 
 MovieList.propTypes = {
