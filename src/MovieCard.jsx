@@ -18,17 +18,11 @@ import openmodal from './MovieModal'
 // </div>`;
 //     arrayofsongs.forEach(populate);
 
-
-
-
 function MovieCard (props) {
     return (
-        
         <div className="moviecard" onClick={() => openmodal(props)}>
         <img className="movieimage" src={props.imgSrc} />
-        
         <h4 className="movietitle">{props.movieTitle} </h4>
-        
         <p className="movierating">{props.movieRating}</p>
     </div>
     )
