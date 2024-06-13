@@ -1,26 +1,104 @@
-/* .playlist {
-     border-width: 3px;
-     border-color: black;
-     display:flex;
-     flex-direction: row;
-}
-.playlistimage {
-
-}
-.playlistinfo {
-
-}
-.songtitle {
-
-}
-.songartist {
-
-}
-
-`<div class="playlist">
-    <img src="${movie.movieTitle}" alt="Song cover art" class="playlistimage">
-    <div class="playlistinfo">
-    <h3 class="songtitle">${movie.movieTitle}</h3>
-    <p class="songartist">${movie.movieTitle}</p>
-    </div>
-</div>`; */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  .onecool{
+    display:block;
+  }
+  /* Define the modal content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 1200px;
+  }
+  /* Style the close button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .close {
+    position: absolute;
+    right: -55px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  /* When the user clicks anywhere outside of the modal, close it */
+  .modal-background {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+    display: none; /* Hidden by default */
+  }
+  /* Add an image to the modal - note this is not shown initially */
+  .modal-content img {
+    margin-top: -100px;
+  }
+  /* Add a "click anywhere to close" overlay */
+  .modal-background:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: rgba(0,0,0,0.3);
+  }
+  /* When the modal is opened add a click event listener to close the modal when clicked anywhere */
+  .modal-background.open:before {
+    display: block;
+  }
+  /* Style the playlist container */
+  .playlist {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  /* Style the playlist image */
+  .playlistimage {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+  /* Style the playlist info */
+  .playlistinfo {
+    text-align: center;
+  }
+  /* Style the song title */
+  .songtitle {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  /* Style the song artist */
+  .songartist {
+    font-size: 18px;
+    color: #666;
+  }
