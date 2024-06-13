@@ -4,6 +4,7 @@ import MovieCard from './MovieCard'
 import MovieList from './MovieList'
 import SearchBar from './SearchBar'
 import NavigationBar from './NavigationBar'
+import MovieModal from './MovieModal'
 
 
 const App = () => {
@@ -14,7 +15,8 @@ const App = () => {
       <h1>Movie Information Display</h1>
       <NavigationBar />
       {/* <SearchBar /> */}
-      <MovieList /*data={movieData}*//>
+      <MovieList/>
+      {/* <MovieModal id="moviemodal"/> */}
     </div>
   )
 }

@@ -4,6 +4,7 @@ import { useState } from 'react'
 
 function SearchBar() {
     const [value, setValue] = useState('');
+    const [keyword, setKeyword] = useState('');
 
     function handleChange (event) {
         setValue(event.target.value);
@@ -12,13 +13,12 @@ function SearchBar() {
         setValue('');
     }
     function handleSearch () {
-        {value}
+        setKeyword(value);
+        console.log({value})
+        console.log(keyword)
         /*use value and pass this to get tmdb data.json again*/
         
     }
-
-
-
     return (
     <>
     <input onChange={handleChange} value={value} type="text" placeholder="Search"></input>
@@ -26,7 +26,12 @@ function SearchBar() {
     <button onClick={handleSearch}>Search</button>
     <button onClick={handleClear}>Clear Button</button>
     </>
-
     )
 }
 export default SearchBar;
+
+/* search bar, on change call other function that sets movie data
+ to the data => lower case and looks for movies that contain keyword
+ on change, call function that parses through movieData according to the keyword,
+ 
+ */

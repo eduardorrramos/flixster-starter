@@ -3,6 +3,9 @@ import React from 'react';
 import propTypes from 'prop-types';
 import MovieCard from './MovieCard'
 import { useState, useEffect } from 'react'
+import './SearchBar.jsx'
+import SearchBar from './SearchBar.jsx';
+
 
 
 // import requests
@@ -11,13 +14,18 @@ import { useState, useEffect } from 'react'
 function MovieList () {
     const [movieData, setMovieData] = useState([])
     const [page, setPage] = useState(1)
+    const [keyword, setKeyword] = useState('')
     
     useEffect(() => {
-        fetchData(page);
-    }, [page]);
-    const fetchData = async (page) => {
+        fetchData(page, keyword);
+    }, [page, keyword]);
+    const fetchData = async (page, keyword) => {
     const apiToken = import.meta.env.VITE_API_TOKEN
-    const response = await fetch(`https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=${page}`,
+    let url = `https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=${page}`;
+    if (keyword) {
+        url += `&search_query=${keyword}`;
+    }
+    const response = await fetch(url,
       {
         method: 'GET',
         headers: {
@@ -30,7 +38,6 @@ function MovieList () {
 
     setMovieData([...movieData,...arrayof]);
   };
-
 function increment() {
     setPage(page + 1);
     console.log({page})
@@ -45,16 +52,16 @@ function increment() {
   }
     let url = "http://image.tmdb.org/t/p/w500";
     return (
-        <>
+        <div className="allcards">
         {movieData.map((movie, i) => (
             <MovieCard
             // key={movie.id}
+            imgSrc={url + movie.poster_path}
             key={i}
             movieTitle={movie.title}
-            imgSrc={url + movie.poster_path}
             movieRating={movie.vote_average}
-            />               
-    ))} <button onClick={increment}> Load More</button> </>    
+            /> 
+    ))} <button onClick={increment}> Load More</button> </div>    
     );
 }
 

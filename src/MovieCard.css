@@ -2,13 +2,44 @@
 .moviecard {
     border-width: 3px;
     display: inline-block;
-    border-color: black;
-    border: thin solid black;
+    /* border-color: black;
+    border: thick solid black; */
+    background-color: null;
     margin: 10px;
-    width:15vw;
-    height:19vw;
+    /* width:15vw;
+    height:22vw; */
+    width:200px;
+    height:340px;
+    transition: all 0.5s ease;
+    /* min-width: 200px;
+    min-height: 340px; */
 } /*not working what why is there no border */
+.moviecard:hover {
+    width: 215px;
+    height: 350px;
+  }
+/* .moviecard:hover .movietitle, 
+.moviecard:hover .movierating,
+.moviecard:hover .movieimage {
+    text-align: left;
+    font-size: 16px;
+    margin: 0px;
+    color: #BFD7ED;
+    width:15.5vw;
+    height:22.5vw;
+} */
+
 .movieimage {
-    height:100px ;
-    width:100px ;
+    /* width:15vw ;
+    height:22vw ; */
+    width:200px ;
+    height:290px ;
+    /* min-width: 200px;
+    min-height: 290px; */
+}
+.movietitle, .movierating {
+    text-align: left;
+    font-size: 15px;
+    margin: 0px;
+    color: #BFD7ED;
 }
