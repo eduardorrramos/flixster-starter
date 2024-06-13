@@ -31,11 +31,12 @@ function MovieList({ /*setKeyword,*/ keyword }) {
             })
         const readabledata = await response.json()
         const arrayof = readabledata.results;
+        
         console.log(arrayof)
         // setMovieData([]);
         // setMovieData([...movieData, ...arrayof]);
         if (keyword) {
-            setMovieData([arrayof]);
+            setMovieData(arrayof);
         }
         else{
             setMovieData([...movieData, ...arrayof]);
