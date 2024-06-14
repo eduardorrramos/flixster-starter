@@ -1,15 +1,21 @@
+.container {
+  display: flex; /* enable flex layout */
+  align-items: center; /* center items vertically */
+  justify-content: center; /* center items horizontally */
+  height: 70px; /* use full height of viewport */
+  padding-bottom: 20px;
+}
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    border: 1px solid #e7e7e7;
-
+  list-style: none; /* remove default bullet points */
+  padding: 0; /* remove default padding */
+  margin: 0; /* remove default margin */
   }
 li {
     display:inline;
     width: 80px;
     border-color: black;
     border-radius: 3px;
+    
 }
 a {
     width: 70px;
@@ -17,4 +23,5 @@ a {
     display: inline-block;
     padding: 8px;
     background-color: #dddddd;
+    
   }

@@ -1,7 +1,6 @@
 import './SearchBar.css'
-import { useState } from 'react'
 
-function SearchBar({keyword, setKeyword, onChange}) {
+function SearchBar({keyword, setKeyword}) {
     // const [keyword, setKeyword] = useState('');
     function handleChange (event) {
         setKeyword(event.target.value);
@@ -19,9 +18,9 @@ function SearchBar({keyword, setKeyword, onChange}) {
     return (
     <>
     <input onChange={handleChange} keyword={keyword} type="text" placeholder="Search"></input>
-    <p>current text keyword: {keyword}</p>
+    {/* <p>current text keyword: {keyword}</p> */}
     {/* <button onClick={handleSearch}>Search</button> */}
-    <button onClick={handleClear}>Clear Button</button>
+    <button className="clearbutton" onClick={handleClear}>Clear Button</button>
     </>
     )
 }

@@ -10,13 +10,19 @@ import MovieModal from './MovieModal'
 const App = () => {
   // const [movie, setMovie] = useState('Random Movie')
   const [keyword, setKeyword] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <div className="App">
-      <h1>Movie Information Display</h1>
+      <h1 className="title">Movie Information Display</h1>
       <NavigationBar />
-      <SearchBar onChange={(event) => setKeyword(event.target.value)} setKeyword={setKeyword}/>
+      <SearchBar className="searchbar" onChange={(event) => setKeyword(event.target.value)} setKeyword={setKeyword}/>
       <MovieList /*setKeyword={setKeyword}*/ keyword={keyword}/>
       {/* <MovieModal id="moviemodal"/> */}
+      {/* <MovieModal id="moviemodal"/> */}
+      
+
+
     </div>
   )
 }

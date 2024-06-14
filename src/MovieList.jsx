@@ -3,25 +3,26 @@ import React from 'react';
 import propTypes from 'prop-types';
 import MovieCard from './MovieCard'
 import { useState, useEffect } from 'react'
+import MovieModal from './MovieModal';
 
-// import requests
-// api_key = 'ab418bdf6d93c36a6816d0ab81c2ec63'
-
-function MovieList({ /*setKeyword,*/ keyword }) {
+function MovieList({ keyword , movieYear}) {
     const [movieData, setMovieData] = useState([]);
     const [page, setPage] = useState(1);
-    // const [keyword, setKeyword] = useState('')
-    // console.log(keyword)
+
     useEffect(() => {
-        fetchData(page, keyword);
-    }, [page, keyword]);
+        fetchData(page, keyword, movieYear);
+    }, [page, keyword, movieYear]);
     
-    const fetchData = async (page, keyword) => {
+    const fetchData = async (page, keyword, movieYear) => {
         const apiToken = import.meta.env.VITE_API_TOKEN
         let url = `https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=${page}`;
         if (keyword) {
             url = `https://api.themoviedb.org/3/search/movie?query=${keyword}&include_adult=false&language=en-US&page=${page}`;
         }
+        else if (movieYear) {
+            url ='https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&primary_release_year=1980&sort_by=popularity.desc';
+        }
+
         const response = await fetch(url,
             {
                 method: 'GET',
@@ -31,8 +32,6 @@ function MovieList({ /*setKeyword,*/ keyword }) {
             })
         const readabledata = await response.json()
         const arrayof = readabledata.results;
-        
-        console.log(arrayof)
         // setMovieData([]);
         // setMovieData([...movieData, ...arrayof]);
         if (keyword) {
@@ -40,18 +39,12 @@ function MovieList({ /*setKeyword,*/ keyword }) {
         }
         else{
             setMovieData([...movieData, ...arrayof]);
-
         }
-
-
     };
-
     function increment() {
         setPage(page + 1);
         console.log({ page })
     };
-    // console.log('keyword', keyword1);
-
     //   const handleMovieChange = (newMovie) => {
     //     setMovie(newMovie);
     //   };
@@ -63,15 +56,14 @@ function MovieList({ /*setKeyword,*/ keyword }) {
         <div className="allcards">
             {movieData.map((movie, i) => (
                 <MovieCard
-                    // key={movie.id}
                     imgSrc={url + movie.poster_path}
                     key={i}
                     movieTitle={movie.title}
                     movieRating={movie.vote_average}
                 />
-            ))} <button onClick={increment}> Load More</button> </div>
+            ))} <button onClick={increment}> Load More</button> 
+            <MovieModal movie ={movieData[0]} id="moviemodal"/></div>
     );
-
 }
 
 MovieList.propTypes = {

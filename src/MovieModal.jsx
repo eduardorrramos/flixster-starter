@@ -1,18 +1,16 @@
 import './MovieModal.css'
-var moviemodal = document.getElementById("moviemodal");
-import './MovieList.jsx'
 
 function MovieModal(movie) {
-    console.log(movie)
-    moviemodal.innerHTML = 
-    `<div class="playlist">
-    <img src="${movie.movieTitle}" alt="Song cover art" class="playlistimage">
-    <div class="playlistinfo">
-    <h3 class="songtitle">${movie.movieTitle}</h3>
-    <p class="songartist">${movie.movieTitle}</p>
-    </div>
-</div>`;
-moviemodal.style.display="block";
-    // arrayofsongs.forEach(populate);
+    // console.log(movie)
+    return (
+        <div className="playlist">
+          <img src={`${movie.poster_path}`} alt="Song cover art" className="playlistimage" />
+          <div className="playlistinfo">
+            <h3 className="songtitle">{movie.title}</h3>
+            <p className="songartist">{movie.vote_average}</p>
+          </div>
+        </div>
+      );
 }
 export default MovieModal;
+
