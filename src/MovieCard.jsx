@@ -18,12 +18,9 @@ import MovieList from './MovieList';
 //     </div>
 // </div>`;
 //     arrayofsongs.forEach(populate);
-
-function MovieCard ({ imgSrc, movieTitle, movieRating, handleClick }) {
-    const [selectedMovie, setSelectedMovie] = useState(null);
-
+function MovieCard ({ imgSrc, movieTitle, movieRating, handleClick}) {
     return (
-        <div className="moviecard" onClick={() => setSelectedMovie()}>
+        <div className="moviecard" onClick={handleClick}>
         <img className="movieimage" src={imgSrc} />
         <h4 className="movietitle">{movieTitle} </h4>
         <p className="movierating">Rating: {movieRating}</p>
@@ -31,10 +28,10 @@ function MovieCard ({ imgSrc, movieTitle, movieRating, handleClick }) {
     )
 }
 MovieCard.propTypes = {
-    // key:propTypes.number.isRequired,
     imgSrc: propTypes.string.isRequired,
     movieTitle: propTypes.string.isRequired,
     movieRating: propTypes.number.isRequired,
     // handleClick: propTypes.func.isRequired,
 };
 export default MovieCard;
+

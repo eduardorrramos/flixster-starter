@@ -9,14 +9,9 @@ function MovieList({ keyword}) {
     const [movieData, setMovieData] = useState([]);
     const [page, setPage] = useState(1);
     const [searched, setSearched] = useState(false);
-    const [movieYear, setMovieYear] = useState(null);
-    // const [selectedMovie, setSelectedMovie] = useState(null);
+    const [movieYear, setMovieYear] = useState('');
+    const [selectedMovie, setSelectedMovie] = useState('');
 
-//     const handleMovieClick = (imgSrc, movieTitle, movieRating) => {
-//     console.log(`Clicked movie: ${movieTitle}, rating: ${movieRating}`);
-//     // You can add any other logic here to handle the click event
-//   };
-/*if else if else*/
 useEffect(() => {
     fetchData(page, keyword, movieYear, searched);
   }, [page, keyword, movieYear, searched]);
@@ -83,9 +78,10 @@ useEffect(() => {
         console.log({ page })
     };
     const handleMovieClick = (movie) => {
-        console.log(`Clicked movie: ${movie.title}, rating: ${movie.vote_average}`);
+        console.log(movie);
+        // console.log(`Clicked movie: ${movie.title}, rating: ${movie.vote_average}`);
         setSelectedMovie(movie);
-        console.log(movie)
+        
       };
     //   const handleMovieChange = (newMovie) => {
     //     setMovie(newMovie);
@@ -110,9 +106,10 @@ useEffect(() => {
                     movieRating={movie.vote_average}
                     handleClick={() => handleMovieClick(movie)}
                 />
-            ))} <button onClick={increment}> Load More</button> 
+            ))} 
+            <button onClick={increment}> Load More</button> 
             
-            <MovieModal movie ={movieData[0]} id="moviemodal"/></div>
+            <MovieModal movie ={selectedMovie} id="moviemodal"/></div>
     );
 }
 
