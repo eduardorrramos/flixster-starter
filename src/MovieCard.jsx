@@ -34,4 +34,3 @@ MovieCard.propTypes = {
     // handleClick: propTypes.func.isRequired,
 };
 export default MovieCard;
-

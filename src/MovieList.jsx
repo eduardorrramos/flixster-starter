@@ -11,7 +11,7 @@ function MovieList({ keyword}) {
     const [searched, setSearched] = useState(false);
     const [movieYear, setMovieYear] = useState('');
     const [selectedMovie, setSelectedMovie] = useState('');
-
+    const [openModal, setOpenModal] = useState('false')
 useEffect(() => {
     fetchData(page, keyword, movieYear, searched);
   }, [page, keyword, movieYear, searched]);
@@ -20,7 +20,7 @@ useEffect(() => {
         const apiToken = import.meta.env.VITE_API_TOKEN
         let url = `https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=${page}`;
         if (keyword) {
-            if (!searched){
+            if (page == 1){
                 setPage(1);
                 setSearched(true);
                 url = `https://api.themoviedb.org/3/search/movie?query=${keyword}&include_adult=false&language=en-US&page=${page}`;
@@ -31,7 +31,7 @@ useEffect(() => {
             }
         }
         else if (movieYear) {
-            if (!searched){
+            if (page == 1){
                 setPage(1);
                 setSearched(true);
                 url = `https://api.themoviedb.org/3/discover/movie?primary_release_year=${movieYear}&sort_by=popularity.desc&include_adult=false&language=en-US&page=${page}`;
@@ -42,7 +42,7 @@ useEffect(() => {
             }
         }
         else {
-            if (!searched){
+            if (page == 1){
                 setPage(1);
                 setSearched(true);
                 url = `https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=${page}`;
@@ -64,10 +64,12 @@ useEffect(() => {
         // setMovieData([]);
         // setMovieData([...movieData, ...arrayof]);
         if (keyword) {
-            setMovieData([...movieData, ...arrayof]);
+            setMovieData(arrayof);
+            console.log("idontwork")
         }
-        if (movieYear) {
-            setMovieData([...movieData, ...arrayof]);
+        else if (movieYear) {
+            setMovieData(arrayof);
+            console.log("ihatethis")
         }
         else{
             setMovieData([...movieData, ...arrayof]);
@@ -81,6 +83,7 @@ useEffect(() => {
         console.log(movie);
         // console.log(`Clicked movie: ${movie.title}, rating: ${movie.vote_average}`);
         setSelectedMovie(movie);
+        setOpenModal(true);
         
       };
     //   const handleMovieChange = (newMovie) => {
@@ -109,7 +112,7 @@ useEffect(() => {
             ))} 
             <button onClick={increment}> Load More</button> 
             
-            <MovieModal movie ={selectedMovie} id="moviemodal"/></div>
+            <MovieModal movie ={selectedMovie} openmodal={openModal} id="moviemodal"/></div>
     );
 }
 
