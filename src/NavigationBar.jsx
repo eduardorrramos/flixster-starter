@@ -1,7 +1,7 @@
 import './NavigationBar.css'
 import  { useState } from 'react';
 
-function NavigationBar({keyword, setKeyword}) {
+function NavigationBar({keyword, setKeyword, movieYear, setMovieYear}) {
 
     function handleChange (event) {
         setKeyword(event.target.value);
@@ -9,7 +9,7 @@ function NavigationBar({keyword, setKeyword}) {
     function handleClear () {
         setKeyword('');
     }
-    const [movieYear, setMovieYear] = useState('');
+    // const [movieYear, setMovieYear] = useState('');
 
     return (
         <>
