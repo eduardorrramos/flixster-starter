@@ -1,7 +1,8 @@
 import propTypes from 'prop-types';
 import './MovieCard.css'
 import openmodal from './MovieModal'
-
+import { useState, useEffect } from 'react'
+import MovieList from './MovieList';
 // function openmodal(movie) {
 //     console.log(movie.movieTitle)
 
@@ -18,12 +19,14 @@ import openmodal from './MovieModal'
 // </div>`;
 //     arrayofsongs.forEach(populate);
 
-function MovieCard (props) {
+function MovieCard ({ imgSrc, movieTitle, movieRating, handleClick }) {
+    const [selectedMovie, setSelectedMovie] = useState(null);
+
     return (
-        <div className="moviecard" onClick={() => openmodal(props)}>
-        <img className="movieimage" src={props.imgSrc} />
-        <h4 className="movietitle">{props.movieTitle} </h4>
-        <p className="movierating">Rating: {props.movieRating}</p>
+        <div className="moviecard" onClick={() => setSelectedMovie()}>
+        <img className="movieimage" src={imgSrc} />
+        <h4 className="movietitle">{movieTitle} </h4>
+        <p className="movierating">Rating: {movieRating}</p>
     </div>
     )
 }
@@ -32,5 +35,6 @@ MovieCard.propTypes = {
     imgSrc: propTypes.string.isRequired,
     movieTitle: propTypes.string.isRequired,
     movieRating: propTypes.number.isRequired,
+    // handleClick: propTypes.func.isRequired,
 };
 export default MovieCard;

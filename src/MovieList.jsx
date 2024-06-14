@@ -10,6 +10,12 @@ function MovieList({ keyword}) {
     const [page, setPage] = useState(1);
     const [searched, setSearched] = useState(false);
     const [movieYear, setMovieYear] = useState(null);
+    // const [selectedMovie, setSelectedMovie] = useState(null);
+
+//     const handleMovieClick = (imgSrc, movieTitle, movieRating) => {
+//     console.log(`Clicked movie: ${movieTitle}, rating: ${movieRating}`);
+//     // You can add any other logic here to handle the click event
+//   };
 /*if else if else*/
 useEffect(() => {
     fetchData(page, keyword, movieYear, searched);
@@ -76,6 +82,11 @@ useEffect(() => {
         setPage(page + 1);
         console.log({ page })
     };
+    const handleMovieClick = (movie) => {
+        console.log(`Clicked movie: ${movie.title}, rating: ${movie.vote_average}`);
+        setSelectedMovie(movie);
+        console.log(movie)
+      };
     //   const handleMovieChange = (newMovie) => {
     //     setMovie(newMovie);
     //   };
@@ -97,6 +108,7 @@ useEffect(() => {
                     key={i}
                     movieTitle={movie.title}
                     movieRating={movie.vote_average}
+                    handleClick={() => handleMovieClick(movie)}
                 />
             ))} <button onClick={increment}> Load More</button> 
             

@@ -32,11 +32,43 @@ a {
     border-radius: 4px; /* Add rounded corners */
     text-align: center; /* Center the text horizontally */
     font-family: 'Roboto', sans-serif; /* Use a more modern font */
-    font-size: 18px; /* Adjust the font size */
+    font-size: 16px; /* Adjust the font size */
     font-weight: bold; /* Make the text bold */
     color: #333; /* Set the text color */
     text-decoration: none; /* Remove any underlines */
+    height: 10px; /* Set a fixed height */
+  line-height: 10px; /* Ensure the text is centered vertically */
+  width:90px;
+  white-space: nowrap; /* Prevent text from wrapping to the next line */
+  margin-right: 2vw;
+
+
   }
   .nowplaying:hover {
     background-color: #f2f2f2; /* Add a hover effect */
+  }
+  .searchbar {
+    display: inline-block; /* Make the element take only the necessary space */
+    padding: 10px 20px; /* Add some padding around the input */
+    background-color: #add8e6; /* Use the same color as the dropdown menu */
+    border: none; /* Remove the default border */
+    border-radius: 4px; /* Add rounded corners */
+    font-family: 'Roboto', sans-serif; /* Use a more modern font */
+    font-size: 16px; /* Adjust the font size */
+    color: #333; /* Set the text color */
+    height: 30px; /* Set a fixed height */
+  line-height: 10px; /* Ensure the text is centered vertically */
+  margin-right: 2vw;
+  width:100px;
+
+  }
+  .searchbar::placeholder {
+    color: #999; /* Change the placeholder text color */
+  }
+  .searchbar:focus {
+    outline: none; /* Remove the default outline when focused */
+    background-color: #f2f2f2; /* Add a hover effect */
+  }
+  .sortbutton{
+    width:130px;
   }
