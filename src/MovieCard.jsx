@@ -23,7 +23,7 @@ function MovieCard (props) {
         <div className="moviecard" onClick={() => openmodal(props)}>
         <img className="movieimage" src={props.imgSrc} />
         <h4 className="movietitle">{props.movieTitle} </h4>
-        <p className="movierating">{props.movieRating}</p>
+        <p className="movierating">Rating: {props.movieRating}</p>
     </div>
     )
 }

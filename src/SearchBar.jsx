@@ -20,7 +20,7 @@ function SearchBar({keyword, setKeyword}) {
     <input onChange={handleChange} keyword={keyword} type="text" placeholder="Search"></input>
     {/* <p>current text keyword: {keyword}</p> */}
     {/* <button onClick={handleSearch}>Search</button> */}
-    <button className="clearbutton" onClick={handleClear}>Clear Button</button>
+    {/* <button className="clearbutton" onClick={handleClear}>Clear Button</button> */}
     </>
     )
 }

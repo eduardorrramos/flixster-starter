@@ -1,9 +1,13 @@
 .App {
   text-align: center;
-  background-color: saddlebrown; /* #050430 */
+  background-color: #050430; /* #050430 */
 }
-.title{
+.title {
   padding-top: 20px;
+  font-family: 'Roboto', sans-serif; /* Use a more modern font */
+  font-size: 36px; /* Increase the font size */
+  font-weight: bold; /* Make the text bold */
+  color: #add8e6; /* Use the same color as the dropdown menu */
 }
 .App-header {
   background-color: #282c34;

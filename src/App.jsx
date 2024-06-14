@@ -14,7 +14,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1 className="title">Movie Information Display</h1>
+      <h1 className="title">F l i x t e r</h1>
       <NavigationBar />
       <SearchBar className="searchbar" onChange={(event) => setKeyword(event.target.value)} setKeyword={setKeyword}/>
       <MovieList /*setKeyword={setKeyword}*/ keyword={keyword}/>

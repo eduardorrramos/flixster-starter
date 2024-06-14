@@ -4,7 +4,7 @@ function NavigationBar() {
         <>
         <div className="container">
         <ul>
-        <li><a href="default.asp">Now Playing</a></li>
+        <li><a className="nowplaying" href="default.asp">Now Playing</a></li>
         </ul>
         </div>
         </>
