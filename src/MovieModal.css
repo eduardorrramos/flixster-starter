@@ -1,14 +1,14 @@
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    display: none; 
+    position: fixed; 
+    z-index: 1;
+    padding-top: 100px; 
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%;
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
   }
   .onecool{
     display:block;
@@ -51,13 +51,11 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,0.3);
-    display: none; /* Hidden by default */
+    display: none;
   }
-  /* Add an image to the modal - note this is not shown initially */
   .modal-content img {
     margin-top: -100px;
   }
-  /* Add a "click anywhere to close" overlay */
   .modal-background:before {
     content: "";
     position: absolute;
@@ -74,10 +72,10 @@
   }
   /* Style the playlist container */
   .playlist {
-    display: flex; /* use flex layout instead of absolute positioning */
-  flex-direction: column; /* stack items vertically */
-  align-items: center; /* center items horizontally */
-  justify-content: center; /* center items vertically */
+    display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center; 
   margin-top: 50px; 
   }
   /* Style the playlist image */
@@ -111,7 +109,7 @@
     background-color: #add8e6;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    z-index: 999; /* Add this line */
+    z-index: 999; 
     width:63vw;
     height:80vw;
     max-height: 580px;

@@ -1,13 +1,9 @@
-/* .cardcontainer {
-    margin-top: 5vw;
-} */
 .allcards {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
-  /* padding: 20px; */
 }
 .sortbutton {
   display: inline-block;
@@ -15,7 +11,7 @@
   height: 50px;
   padding: 0 10px;
   font-size: 16px;
-  line-height: 50px; /* Make the text center-aligned */
+  line-height: 50px; 
   text-align: center;
   color: #333;
   background-color: #add8e6;
@@ -37,22 +33,22 @@
   background-color: #f2f2f2;
 }
 .loadmore{
-  display: inline-block; /* Make the element take only the necessary space */
-  padding: 10px 20px; /* Add some padding around the input */
-  background-color: #add8e6; /* Use the same color as the dropdown menu */
-  border: none; /* Remove the default border */
-  border-radius: 4px; /* Add rounded corners */
-  font-family: 'Roboto', sans-serif; /* Use a more modern font */
-  font-size: 16px; /* Adjust the font size */
+  display: inline-block; 
+  padding: 10px 20px; 
+  background-color: #add8e6; 
+  border: none; 
+  border-radius: 4px; 
+  font-family: 'Roboto', sans-serif; 
+  font-size: 16px; 
   color: #333;
 }
 .yesload{
-  background-color: #add8e6; /* Use the same color as the dropdown menu */
-  padding: 10px 20px; /* Add some padding around the input */
-  border: none; /* Remove the default border */
-  border-radius: 4px; /* Add rounded corners */
-  font-family: 'Roboto', sans-serif; /* Use a more modern font */
-  font-size: 16px; /* Adjust the font size */
+  background-color: #add8e6; 
+  padding: 10px 20px; 
+  border: none; 
+  border-radius: 4px;
+  font-family: 'Roboto', sans-serif; 
+  font-size: 16px; 
   color: #333;
   margin-bottom: 45px;
 }

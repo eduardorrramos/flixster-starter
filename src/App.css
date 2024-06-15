@@ -19,10 +19,36 @@
   padding: 20px;
 }
 .header {
+  padding-top: 20px;
   background-color: #f2f2f2;
 }
 .headerparagraph {
   color:#f2f2f2;
+}
+.footerpage{
+  padding-bottom: 20px;
+  padding-top: 20px;
+  align-items: center;
+  background-color: #f2f2f2;
+}
+.emailfoot {
+  display: inline-block; 
+    padding: 20px;
+    background-color: #add8e6; 
+    border-radius: 4px; 
+    text-align: center; 
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: bold; 
+    color: #333; 
+    text-decoration: none; 
+    height: 10px; 
+  line-height: 10px; 
+  width:190px;
+  white-space: nowrap; 
+  margin-right: 2vw;
+  align-items: center;
+
 }
 @media (max-width: 600px) {
   .movie-card {
@@ -39,19 +65,19 @@
   }
 }
 .searchbar {
-  display: inline-block; /* Make the element take only the necessary space */
-  padding: 10px 20px; /* Add some padding around the input */
-  background-color: #add8e6; /* Use the same color as the dropdown menu */
-  border: none; /* Remove the default border */
-  border-radius: 4px; /* Add rounded corners */
-  font-family: 'Roboto', sans-serif; /* Use a more modern font */
-  font-size: 16px; /* Adjust the font size */
-  color: #333; /* Set the text color */
+  display: inline-block; 
+  padding: 10px 20px; 
+  background-color: #add8e6; 
+  border: none; 
+  border-radius: 4px; 
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px; 
+  color: #333; 
 }
 .searchbar::placeholder {
-  color: #999; /* Change the placeholder text color */
+  color: #999; 
 }
 .searchbar:focus {
-  outline: none; /* Remove the default outline when focused */
-  background-color: #f2f2f2; /* Add a hover effect */
+  outline: none; 
+  background-color: #f2f2f2; 
 }
