@@ -13,7 +13,6 @@
 //     //     console.log({value})
 //     //     console.log(keyword)
 //     //     /*use value and pass this to get tmdb data.json again*/
-        
 //     // }
 //     return (
 //     <>

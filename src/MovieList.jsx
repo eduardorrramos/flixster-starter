@@ -10,14 +10,16 @@ function MovieList({movieData, increment}) {
     // const [page, setPage] = useState(1);
     // const [searched, setSearched] = useState(false);
     const [selectedMovie, setSelectedMovie] = useState('');
-    const [openModal, setOpenModal] = useState('false')
-
+    const [openModal, setOpenModal] = useState(false)
+    // console.log(openModal)
 
     const handleMovieClick = (movie) => {
-        console.log(movie);
-        // console.log(`Clicked movie: ${movie.title}, rating: ${movie.vote_average}`);
+        // console.log(movie);
+        // console.log(`Clicked movie: ${movie.original_title}, rating: ${movie.vote_average}`);
         setSelectedMovie(movie);
-        setOpenModal(true);
+        // console.log(selectedMovie);
+        setOpenModal(!openModal);
+        // console.log(openModal)
         
       };
     //   const handleMovieChange = (newMovie) => {
@@ -48,7 +50,7 @@ function MovieList({movieData, increment}) {
             ))} 
             <button onClick={increment}> Load More</button> 
             
-            <MovieModal movie ={selectedMovie} openmodal={openModal} id="moviemodal"/></div>
+            <MovieModal movie={selectedMovie} openmodal={openModal} setOpenModal={setOpenModal} id="moviemodal"/></div>
     );
 }
 

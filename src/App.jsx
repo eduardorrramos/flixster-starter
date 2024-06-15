@@ -9,24 +9,24 @@ import MovieModal from './MovieModal'
 
 const App = () => {
   // const [movie, setMovie] = useState('Random Movie')
-  const [keyword, setKeyword] = useState(null);
-  const [movieYear, setMovieYear] = useState(null);
+  const [keyword, setKeyword] = useState('');
+  const [movieYear, setMovieYear] = useState('');
   const [movieData, setMovieData] = useState([]);
   const [page, setPage] = useState(1);
   const [searched, setSearched] = useState(false);
-
+/* handles load more button for keyword */
     function increment() {
       setPage(page + 1);
       console.log({ page })
   };
-
+/* handles filter by year selected */
   function handleYearSelection (event) {
     setMovieYear(event);
   };
   useEffect(() => {
     fetchData(page, keyword, movieYear, searched);
   }, [page, keyword, movieYear, searched]);
-    
+/* fetch data, filter components by whether keyword, movie year, or none is provided */
     const fetchData = async (page, keyword, movieYear) => {
         const apiToken = import.meta.env.VITE_API_TOKEN
         let url = `https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=${page}`;
@@ -72,8 +72,6 @@ const App = () => {
             });
         const readabledata = await response.json()
         const arrayof = readabledata.results;
-        // setMovieData([]);
-        // setMovieData([...movieData, ...arrayof]);
         if (keyword) {
             setMovieData(arrayof);
             console.log("idontwork")
@@ -86,9 +84,12 @@ const App = () => {
             setMovieData([...movieData, ...arrayof]);
         }
     };
+/* returns components of application to user display */
   return (
     <div className="App">
-      <h1 className="title">F l i x t e r</h1>
+      <header className="header"><h1>F l i x t e r</h1>
+     <p className="headerparagraph"> d                awdf  </p> </header>
+      <h1 className="title"></h1>
       <NavigationBar 
         className="searchbar" 
         onChange={(event) => setKeyword(event.target.value)}
@@ -97,10 +98,6 @@ const App = () => {
         movieYear={movieYear}
        />
       <MovieList increment={increment} movieData={movieData}/>
-
-      
-
-
     </div>
   )
 }

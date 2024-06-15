@@ -46,3 +46,13 @@
   font-size: 16px; /* Adjust the font size */
   color: #333;
 }
+.yesload{
+  background-color: #add8e6; /* Use the same color as the dropdown menu */
+  padding: 10px 20px; /* Add some padding around the input */
+  border: none; /* Remove the default border */
+  border-radius: 4px; /* Add rounded corners */
+  font-family: 'Roboto', sans-serif; /* Use a more modern font */
+  font-size: 16px; /* Adjust the font size */
+  color: #333;
+  margin-bottom: 45px;
+}

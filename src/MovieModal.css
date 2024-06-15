@@ -116,11 +116,17 @@
     height:80vw;
     max-height: 580px;
     max-width: 500px;
-    display: "block";
 
   }
   .show-modal {
     opacity: 1;
     pointer-events: auto;
     visibility: visible;
+  }
+  .closebutton {
+    min-height:20px;
+    min-width:60px;
+    background-color: #fefefe;
+    border: none;
+    color: rgb(0,0,0);
   }

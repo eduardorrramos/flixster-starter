@@ -23,7 +23,7 @@ function MovieCard ({ imgSrc, movieTitle, movieRating, handleClick}) {
         <div className="moviecard" onClick={handleClick}>
         <img className="movieimage" src={imgSrc} />
         <h4 className="movietitle">{movieTitle} </h4>
-        <p className="movierating">Rating: {movieRating}</p>
+        <p className="movierating"> {movieRating} 🌟 </p>
     </div>
     )
 }
