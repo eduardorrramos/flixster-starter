@@ -1,3 +1,54 @@
-.cardcontainer {
-    margin-top: 5vw;
+.allcards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.sortbutton {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  padding: 0 10px;
+  font-size: 16px;
+  line-height: 50px; 
+  text-align: center;
+  color: #333;
+  background-color: #add8e6;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.sortbutton:focus {
+  outline: none;
+}
+.sortbutton option {
+  background-color: #fff;
+  color: #333;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.sortbutton option:hover {
+  background-color: #f2f2f2;
+}
+.loadmore{
+  display: inline-block; 
+  padding: 10px 20px; 
+  background-color: #add8e6; 
+  border: none; 
+  border-radius: 4px; 
+  font-family: 'Roboto', sans-serif; 
+  font-size: 16px; 
+  color: #333;
+}
+.yesload{
+  background-color: #add8e6; 
+  padding: 10px 20px; 
+  border: none; 
+  border-radius: 4px;
+  font-family: 'Roboto', sans-serif; 
+  font-size: 16px; 
+  color: #333;
+  margin-bottom: 45px;
 }

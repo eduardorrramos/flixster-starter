@@ -1,0 +1,130 @@
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1;
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+  }
+  .onecool{
+    display:block;
+  }
+
+  /* Define the modal content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 1200px;
+  }
+  /* Style the close button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .close {
+    position: absolute;
+    right: -55px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  /* When the user clicks anywhere outside of the modal, close it */
+  .modal-background {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+    display: none;
+  }
+  .modal-content img {
+    margin-top: -100px;
+  }
+  .modal-background:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: rgba(0,0,0,0.3);
+  }
+  /* When the modal is opened add a click event listener to close the modal when clicked anywhere */
+  .modal-background.open:before {
+    display: block;
+  }
+  /* Style the playlist container */
+  .playlist {
+    display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center; 
+  margin-top: 50px; 
+  }
+  /* Style the playlist image */
+  .playlistimage {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+  /* Style the playlist info */
+  .playlistinfo {
+    text-align: center;
+  }
+  /* Style the song title */
+  .songtitle {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  /* Style the song artist */
+  .songartist {
+    font-size: 18px;
+    color: #666;
+  }
+  .playlist {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2rem;
+    background-color: #add8e6;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    z-index: 999; 
+    width:63vw;
+    height:80vw;
+    max-height: 580px;
+    max-width: 500px;
+
+  }
+  .show-modal {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+  }
+  .closebutton {
+    min-height:20px;
+    min-width:60px;
+    background-color: #fefefe;
+    border: none;
+    color: rgb(0,0,0);
+  }

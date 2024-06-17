@@ -2,28 +2,37 @@ import './MovieList.css';
 import React from 'react';
 import propTypes from 'prop-types';
 import MovieCard from './MovieCard'
+import { useState, useEffect } from 'react'
+import MovieModal from './MovieModal';
 
-// import requests
-// api_key = 'ab418bdf6d93c36a6816d0ab81c2ec63'
-
-function MovieList ({data}) {
-    let moviearray = (data.results);
-    // console.log(moviearray);
+function MovieList({movieData, increment}) {
+    const [selectedMovie, setSelectedMovie] = useState('');
+    const [openModal, setOpenModal] = useState(false)
+    const handleMovieClick = (movie) => {
+        setSelectedMovie(movie);
+        setOpenModal(!openModal);
+      };
+    if (!movieData) {
+        return <div>Loading</div>
+    }
     let url = "http://image.tmdb.org/t/p/w500";
-            return (
 
-moviearray.map((movie) => (
-            <> {
-            <MovieCard
-            key={movie.id}
-            movieTitle={movie.title}
-            imgSrc={url + movie.poster_path}
-            movieRating={movie.vote_average}
-            />
-            }
-            </> 
- )) );
-    
+    return (
+        <div className="allcards">
+
+            {movieData.map((movie, i) => (
+                <MovieCard
+                    imgSrc={url + movie.poster_path}
+                    key={i}
+                    movieTitle={movie.title}
+                    movieRating={movie.vote_average}
+                    handleClick={() => handleMovieClick(movie)}
+                />
+            ))} 
+            <button onClick={increment}> Load More</button> 
+            
+            <MovieModal movie={selectedMovie} openmodal={openModal} setOpenModal={setOpenModal} id="moviemodal"/></div>
+    );
 }
 
 MovieList.propTypes = {
