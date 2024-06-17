@@ -6,7 +6,7 @@ Submitted by: **NAME**
 
 Estimated time spent: **#** hours spent in total
 
-Deployed Application (optional): [Flixster Deployed Site] [(https://flixster-starter-xskg.onrender.com/)]
+Deployed Application (optional): [(https://flixster-starter-xskg.onrender.com/)]
 
 ### Application Features
 
